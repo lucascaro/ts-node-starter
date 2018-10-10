@@ -8,12 +8,13 @@
     "ts-node-starter-cli": "./bin/cli.sh"
   },
   "scripts": {
-    "build": "rm -rf dist/* && tsc && ef-tspm",
+    "clean": "rm -rf dist/*",
+    "build": "npm run clean && tsc && ef-tspm",
     "start": "node dist/index.js",
     "watch": "nodemon -e ts --exec 'npm run build || true'",
     "prepublishOnly": "npm run build",
     "release": "npm version patch && npm publish",
-    "test": "jest"
+    "test": "npm run clean && jest"
   },
   "license": "MIT",
   "devDependencies": {
