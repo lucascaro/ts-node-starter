@@ -1,0 +1,30 @@
+{
+  "name": "ts-node-starter",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Lucas Caro",
+  "main": "dist/index.js",
+  "bin": {
+    "ts-node-starter-cli": "./bin/cli.sh"
+  },
+  "scripts": {
+    "build": "rm -rf dist/* && tsc && ef-tspm",
+    "start": "node dist/index.js",
+    "watch": "nodemon -e ts --exec 'npm run build || true'",
+    "prepublishOnly": "npm run build",
+    "release": "npm version patch && npm publish",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@ef-carbon/tspm": "^2.2.5",
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.11.3",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {}
+}
