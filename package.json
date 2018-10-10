@@ -1,7 +1,7 @@
 {
   "name": "ts-node-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple node.js project starter for typescript.",
   "author": "Lucas Caro",
   "main": "dist/index.js",
   "bin": {
