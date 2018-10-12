@@ -9,6 +9,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist/*",
+    "lint": "tslint --project tsconfig.json -c tslint.json src/**/*.ts",
     "build": "npm run clean && tsc && ef-tspm",
     "start": "node dist/index.js",
     "watch": "nodemon -e ts --exec 'npm run build || true'",

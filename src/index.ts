@@ -1,3 +1,3 @@
-import log from '@helpers/log'
+import log from '@helpers/log';
 
-log('Typescript Node Starter')
+log('Typescript Node Starter');
