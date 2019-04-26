@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
+    "lib": ["es2018"],
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,
@@ -9,13 +10,14 @@
     "paths": {
       "@src/*": ["src/*"],
       "@helpers/*": ["src/helpers/*"]
-    }
+    },
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths",
+        "exclude": ["*"]
+      }
+    ]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/node_modules/*"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
