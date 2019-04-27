@@ -6,6 +6,13 @@ A simple node.js project starter for typescript.
 
 Simply download, run `npm i` and start adding code in `./src`.
 
+Alternatively, do a shallow clone and remove `.git`:
+
+```bash
+git clone --depth=1 --branch=master git@github.com:lucascaro/ts-node-starter.git your-project-name
+rm -rf ./your-project-name/.git
+```
+
 ### Compiling
 
 ```shell
