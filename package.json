@@ -9,14 +9,16 @@
   },
   "scripts": {
     "build:clean": "rm -rf dist/*",
-    "build": "npm run build:clean && ttsc -p .",
-    "watch": "ttsc --watch -p .",
+    "build:rollup": "rollup -c ./rollup.config.js",
+    "build": "npm run build:clean && npm run build:rollup",
     "lint:fix": "eslint --fix src/**/*.ts",
     "lint": "eslint src/**/*.ts",
     "prepublishOnly": "npm run build",
     "release": "npm version patch && npm publish",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test:watch": "jest --watch",
+    "test": "jest",
+    "watch": "rollup -c ./rollup.config.js --watch"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,15 +26,17 @@
     "@types/node": "^12.7.5",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
-    "@zerollup/ts-transform-paths": "^1.7.3",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.1.0",
-    "ttypescript": "^1.5.7",
     "typescript": "^3.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rollup": "^1.21.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.24.2"
+  }
 }
