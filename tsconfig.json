@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2018",
-    "lib": ["es2018"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "sourceMap": true,
     "outDir": "dist",
     "strict": true,

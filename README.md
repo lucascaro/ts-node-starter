@@ -1,6 +1,6 @@
 # Typescript Node Starter
 
-A simple node.js project starter for typescript.
+A simple node.js project starter for typescript using babel, jest and ts-jest.
 
 ## Usage
 
@@ -10,7 +10,17 @@ Alternatively, do a shallow clone and remove `.git`:
 
 ```bash
 git clone --depth=1 --branch=master git@github.com:lucascaro/ts-node-starter.git your-project-name
-rm -rf ./your-project-name/.git
+cd your-project-name
+rm -rf .git
+npm i
+```
+
+Or use [degit](https://www.npmjs.com/package/degit):
+
+```bash
+npx degit lucascaro/ts-node-starter your-project-name
+cd your-project-name
+npm i
 ```
 
 ### Compiling
@@ -19,7 +29,7 @@ rm -rf ./your-project-name/.git
 npm run build
 ```
 
-Compiles the project using tsc. Javascript files will be in `./dist`.
+Compiles the project using babel. Javascript files will be in `./dist`.
 
 ```shell
 npm run watch
@@ -33,7 +43,7 @@ Listens and recompiles the project on src changes.
 npm start
 ```
 
-Runs the main command.
+Runs the main script.
 
 ```shell
 npm link
@@ -44,7 +54,7 @@ Creates a symlink so you can run the project as a cli tool. Change the default b
 
 ### Testing
 
-Tests are in the `./test/` directory.
+Tests are in `src` inside `./__tests__/` directories.
 
 ```shell
 npm test
