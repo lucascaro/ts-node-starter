@@ -1,16 +1,11 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { pathsToModuleNameMapper } = require("ts-jest/utils")
-const { compilerOptions } = require("./tsconfig.json")
-
 module.exports = {
-  // preset: "ts-jest",
-  roots: ["<rootDir>/src"],
+  roots: ["<rootDir>"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.tsx?$": "babel-jest",
   },
-  testEnvironment: "node",
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    // prefix: "../",
-    prefix: "<rootDir>/",
-  }),
+  testEnvironment: "jsdom",
+  moduleNameMapper: {
+    "^@src(.*)$": "<rootDir>/src$1",
+    "^@helpers(.*)$": "<rootDir>/src/helpers$1",
+  },
 }
